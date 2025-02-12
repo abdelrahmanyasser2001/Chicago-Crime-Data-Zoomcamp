@@ -112,6 +112,14 @@ def insert_into_snowflake(filepath, snowflake_conn_id=_SNOWFLAKE_CONN_ID):
 CREATE_MAIN_TABLE= (
     f'''CREATE TABLE IF NOT EXISTS {_SNOWFLAKE_TABLE} (
     id INTEGER,
+    case_number TEXT UNIQUE NOT NULL,
+    date TIMESTAMP_NTZ,
+    block TEXT,
+    IUCR TEXT ,
+    primary_type TEXT ,
+    description TEXT,
+    location_description TEXT,
+    arrest BOOLEAN,
     domestic BOOLEAN ,
     beat TEXT ,
     district TEXT ,
@@ -122,23 +130,25 @@ CREATE_MAIN_TABLE= (
     y_coordinate INTEGER,
     year INTEGER ,
     updated_on TIMESTAMPTZ,
-    case_number TEXT UNIQUE NOT NULL,
     latitude DOUBLE PRECISION,
     longitude DOUBLE PRECISION,
-    location TEXT,
-    date TIMESTAMPTZ,
-    block TEXT,
-    IUCR TEXT ,
-    primary_type TEXT ,
-    description TEXT,
-    location_description TEXT,
-    arrest BOOLEAN );'''
+    location TEXT
+
+);'''
 )
 
 
 CREATE_STAGING_TABLE= (
     f'''CREATE TABLE IF NOT EXISTS {_SNOWFLAKE_STAGING_TABLE} (
     id INTEGER,
+    case_number TEXT UNIQUE NOT NULL,
+    date TIMESTAMP_NTZ,
+    block TEXT,
+    IUCR TEXT ,
+    primary_type TEXT ,
+    description TEXT,
+    location_description TEXT,
+    arrest BOOLEAN,
     domestic BOOLEAN ,
     beat TEXT ,
     district TEXT ,
@@ -149,19 +159,12 @@ CREATE_STAGING_TABLE= (
     y_coordinate INTEGER,
     year INTEGER ,
     updated_on TIMESTAMPTZ,
-    case_number TEXT UNIQUE NOT NULL,
     latitude DOUBLE PRECISION,
     longitude DOUBLE PRECISION,
-    location TEXT,
-    date TIMESTAMPTZ,
-    block TEXT,
-    IUCR TEXT ,
-    primary_type TEXT ,
-    description TEXT,
-    location_description TEXT,
-    arrest BOOLEAN );'''
+    location TEXT
+        
+);'''
 )
-
 
 TRUNCATE_STAGING= (f'TRUNCATE TABLE {_SNOWFLAKE_STAGING_TABLE};')
 
