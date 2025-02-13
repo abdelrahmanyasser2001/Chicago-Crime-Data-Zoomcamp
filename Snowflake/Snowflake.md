@@ -1,3 +1,35 @@
+
+### Terraform Setup
+#### Step 1: Install Terraform
+If you haven’t already, you need to install Terraform on your local machine. You can download it from the official website: Terraform Downloads.
+
+#### Step 2: Create a Terraform Configuration File
+Create a new directory for your Terraform project and create Terraform configuration files (e.g., `main.tf`, `providers.tf`, `variables.tf`) within that directory. These files will contain your Terraform configuration.
+
+Here is `providers.tf`:
+
+```hcl
+terraform {
+  required_providers {
+    snowflake = {
+      source  = "Snowflake-Labs/snowflake"
+      version = "~> 0.76"
+    }
+  }
+}
+
+provider "snowflake" {
+  username = var.snowflake_username
+  password = var.snowflake_password
+  account  = var.snowflake_account_name
+  region   = var.snowflake_region
+}
+```
+
+#### Step 3: Define Variables
+Define the necessary variables in `variables.tf` to store sensitive information securely.
+
+
 **Snowflake Setup Documentation**
 
 This document outlines the steps to set up Snowflake for your project, including creating roles, warehouses, and schemas.
