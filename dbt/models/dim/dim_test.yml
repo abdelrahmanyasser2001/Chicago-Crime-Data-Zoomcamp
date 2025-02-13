@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: CRIME_TYPE_DIM
+    columns:
+      - name: CRIME_TYPE_ID
+        tests:
+          - not_null
+          - unique
+  - name: DATE_TIME_DIM
+    columns:
+      - name: DATE_ID
+        tests:
+          - not_null
+          - unique
+  - name: LOCATION_DIM
+    columns:
+      - name: location_id
+        tests:
+          - not_null
+          - unique
+

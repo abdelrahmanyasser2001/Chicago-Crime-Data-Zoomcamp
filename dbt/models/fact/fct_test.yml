@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: FACT_CRIME
+    columns:
+      - name: crime_id
+        tests:
+          - not_null
+          - unique
+      - name: date_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('date_time_dim')
+              field: date_id
+      - name: location_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('location_dim')
+              field: location_id
+      - name: crime_type_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_crime_type')
+              field: crime_type_id
+      - name: arrest
+        tests:
+          - accepted_values:
+              values: [true, false]
+      - name: domestic
+        tests:
+          - accepted_values:
+              values: [true, false]
