@@ -1,5 +1,5 @@
 
-### Terraform Setup
+## Terraform Setup
 #### Step 1: Install Terraform
 If you haven’t already, you need to install Terraform on your local machine. You can download it from the official website: Terraform Downloads.
 
@@ -30,7 +30,7 @@ provider "snowflake" {
 Define the necessary variables in `variables.tf` to store sensitive information securely.
 
 
-**Snowflake Setup Documentation**
+## Snowflake Setup
 
 This document outlines the steps to set up Snowflake for your project, including creating roles, warehouses, and schemas.
 
