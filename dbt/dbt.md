@@ -44,6 +44,33 @@ dbt run
 dbt test
 ```
 
+## DBT Lineage Graph 
+
+### Transformation Flow Overview
+This **dbt lineage graph** represents the transformation flow of your **Chicago crime data** from the raw source table to the final fact and dimension tables.
+
+### Source Table
+- **`CRIME_DATA.SRC_CRIME`** (Green Node): This is the **raw data source**.
+
+### Staging Layer
+- **`stg_chicago_crime`** (Blue Node): A **staging model** that cleans and preps data from the raw source before transformation.
+
+### Dimension Tables
+- **`CRIME_TYPE_DIM`**: Holds crime types and descriptions.
+- **`DATE_TIME_DIM`**: Stores crime date-time breakdown (year, month, day, etc.).
+- **`LOCATION_DIM`**: Contains location details (latitude, longitude, community area, etc.).
+
+### Fact Table
+- **`FACT_CRIME`**: The **central fact table**, linking crimes with date, location, and type dimensions.
+
+### Testing Node
+- **`data_logic_test`**: A test model to validate data integrity and logic.
+
+### Linage Graph
+![Graph](./images/LineageGraph.png)
+
+
+
 ## Data Model - Star Schema
 The project follows a star schema with the following tables:
 
