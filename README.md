@@ -20,7 +20,7 @@ The data pipeline consists of the following major stages:
 4. **Visualize:** Insights are presented using **Metabase dashboards**
 5. **Infrastructure:** **Terraform** is used to provision **Snowflake** resources automatically
 
-![Project Overview](/images/datazoom.png)
+![Project Overview](/images/Chicago-project-overview.png)
 
 ##  Data Processing Pipeline
 ### 🔹 Extraction (Airflow)
