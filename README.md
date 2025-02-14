@@ -44,7 +44,9 @@ The final data is used to generate interactive dashboards that provide insights 
 - **Crime Distribution by Location** 📍
 - **Crime Types Analysis** 🔍
 
-![Visualization Sample](/Metabase_Dashboard/metabase%20analysis.pdf)
+![chart1](/Metabase_Dashboard/images/Screenshot%20from%202025-02-14%2011-06-46.png)
+![chart1](/Metabase_Dashboard/images/Screenshot%20from%202025-02-14%2011-07-04.png)
+![Visualizations Pdf](/Metabase_Dashboard/metabase%20analysis.pdf)
 
 ## Data Quality & Testing
 To ensure data integrity, we use:
