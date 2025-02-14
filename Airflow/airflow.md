@@ -97,3 +97,4 @@ astro dev stop
 This setup ensures a structured ETL process for ingesting crime data into Snowflake using Apache Airflow.
 
 
+![Project Overview](/Airflow/images/Screenshot%20from%202025-02-12%2013-30-54.png)
