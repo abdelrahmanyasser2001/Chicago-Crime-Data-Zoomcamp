@@ -26,14 +26,20 @@ The data pipeline consists of the following major stages:
 ### 🔹 Extraction (Airflow)
 - Extracts crime data from a public API
 - Runs on a scheduled basis inside **Docker** containers
+[Details about Airflow](/Airflow/airflow.md)
+
 
 ### 🔹 Loading (Snowflake)
 - Stores raw crime data in **staging tables**
 - Provides a scalable, cloud-based data warehouse
+[Details about Snowflake and Terraform](/Snowflake-Terraform/Snowflake-Terraform.md)
+
 
 ### 🔹 Transformation (dbt)
 - Cleans and structures data into **fact and dimension tables**
 - Ensures data consistency and quality
+[Details about dbt](/dbt/dbt.md)
+
 
 ![DBT Lineage Graph](/dbt/images/LineageGraph.png)
 
